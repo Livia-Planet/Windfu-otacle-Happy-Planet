@@ -8,31 +8,38 @@ interface TalismanProps {
 
 const Talisman: React.FC<TalismanProps> = ({ data }) => {
   return (
-    <div className="relative w-64 md:w-80 aspect-[1/2] paper-texture rounded-lg shadow-2xl p-6 flex flex-col items-center justify-between border-4 border-red-900 animate-float mx-auto overflow-hidden">
-      {/* Decorative Border */}
-      <div className="absolute inset-2 border border-red-800 opacity-30 pointer-events-none"></div>
+    <div className="relative w-72 md:w-80 aspect-[4/5] snow-card p-8 flex flex-col items-center justify-between animate-drift mx-auto overflow-hidden">
+      {/* Fluffy Border Decoration */}
+      <div className="absolute top-0 left-0 w-full h-4 bg-blue-50/50"></div>
       
-      {/* Header Title */}
-      <div className="z-10 text-red-900 font-bold text-2xl tracking-widest mt-4" style={{ fontFamily: 'Ma Shan Zheng, cursive' }}>
-        {data.title}
+      {/* Title */}
+      <div className="z-10 text-blue-900 font-bold text-2xl tracking-tight mb-2 text-center">
+        ❄️ {data.title} ❄️
       </div>
 
-      {/* Main Talisman Character */}
-      <div className="z-10 text-red-700 text-9xl select-none flex items-center justify-center" style={{ fontFamily: 'Zhi Mang Xing, cursive' }}>
+      {/* The Big Character in a Snowball */}
+      <div className="z-10 w-32 h-32 bg-sky-100 rounded-full border-4 border-white shadow-inner flex items-center justify-center text-sky-600 text-6xl" 
+           style={{ fontFamily: 'Zhi Mang Xing, cursive' }}>
         {data.talismanChar}
       </div>
 
-      {/* Vertical Poem */}
-      <div className="z-10 flex flex-row-reverse gap-4 writing-vertical h-48 mb-8 text-red-900 opacity-80">
+      {/* Cute Poem Lines */}
+      <div className="z-10 space-y-2 text-center">
         {data.poem.map((line, idx) => (
-          <p key={idx} className="text-sm font-medium leading-relaxed">{line}</p>
+          <p key={idx} className="text-blue-800/80 font-medium text-sm leading-relaxed italic">
+            {line}
+          </p>
         ))}
       </div>
 
-      {/* Seal Seal */}
-      <div className="absolute bottom-4 right-4 w-12 h-12 border-2 border-red-700 flex items-center justify-center text-red-700 font-bold transform -rotate-12 bg-transparent">
-        <span className="text-[10px] leading-tight text-center">WINDFU<br/>ORACLE</span>
+      {/* Bottom Paw Print or Seal */}
+      <div className="z-10 mt-4 text-sky-300 text-xs font-bold uppercase tracking-widest">
+        Windfu's Snow Blessing
       </div>
+      
+      {/* Background Fluff */}
+      <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-50 rounded-full opacity-50 blur-xl"></div>
+      <div className="absolute -top-10 -left-10 w-32 h-32 bg-blue-50 rounded-full opacity-50 blur-xl"></div>
     </div>
   );
 };

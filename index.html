@@ -6,29 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windfu Oracle</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Sans+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0c0c0c;
-            color: #e2e2e2;
+            background-color: #050b14;
+            color: #e2eaf3;
             overflow-x: hidden;
-            font-family: 'Noto Serif SC', serif;
+            font-family: 'Fredoka', sans-serif;
         }
-        .writing-vertical {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
+        .snow-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(100, 150, 200, 0.2), inset 0 0 20px rgba(255,255,255,1);
+            border: 4px solid #e0f2fe;
         }
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(1deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
+        @keyframes drift {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(10px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
         }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        .animate-drift {
+            animation: drift 5s ease-in-out infinite;
         }
-        .paper-texture {
-            background-color: #f4e4bc;
-            background-image: url("https://www.transparenttextures.com/patterns/old-paper.png");
+        /* Simple Snow Animation */
+        .snowflake {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh); }
         }
     </style>
 <script type="importmap">

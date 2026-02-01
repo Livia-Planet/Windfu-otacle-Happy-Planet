@@ -1,4 +1,6 @@
 
+export type Language = 'en' | 'zh' | 'sv';
+
 export interface OracleResponse {
   title: string;
   poem: string[];
