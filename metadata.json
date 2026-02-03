@@ -1,5 +1,7 @@
 {
   "name": "Windfu Oracle - Digital Taoist Divination",
   "description": "An ethereal, AI-powered oracle that interprets the winds to provide poetic divinations and custom digital talismans using Gemini 3 Pro.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "microphone"
+  ]
 }
